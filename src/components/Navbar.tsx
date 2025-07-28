@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center z-50 space-x-2 md:space-x-3">
             {/* Logo placeholder - you can replace this with your actual logo */}
-            <div className="w-8 h-8 md:w-10 md:h-10 p-1 bg-gradient-to-r from-[#03e9f4] to-[#7928ca] rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 md:w-10 md:h-10 p-1 bg-white rounded-lg flex items-center justify-center">
               
             <img
             src={logo}
@@ -66,8 +66,8 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
             <a href="#home" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Home</a>
             <a href="#about" className="text-sm text-white hover:text-[#03e9f4] transition-colors">About</a>
             <a href="#services" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Services</a>
-            <a href="#process" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Process</a>
-            <a href="#team" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Team</a>
+            <a href="#process" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Portfolio</a>
+            <a href="#team" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Blog</a>
             <a href="#contact" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Contact</a>
             <button 
               onClick={openQuoteForm}
