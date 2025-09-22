@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -26,24 +27,26 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full overflow-x-hidden bg-[#080e1c]">
-      <ProgressBar />
-      <StarField />
-      <Navbar openQuoteForm={openQuoteForm} />
-      <main>
-        <Hero openQuoteForm={openQuoteForm} />
-        <About />
-        <Services />
-        <Process />
-       
-        <OurStory />
-        <Testimonials />
-        <Contact openQuoteForm={openQuoteForm} />
-      </main>
-      <Footer />
-      <WhatsAppButton phoneNumber="919918096894" />
-      <QuoteForm show={showQuoteForm} onClose={closeQuoteForm} />
-    </div>
+    <ThemeProvider>
+      <div className="relative w-full overflow-x-hidden bg-white dark:bg-[#080e1c] transition-colors duration-300">
+        <ProgressBar />
+        <StarField />
+        <Navbar openQuoteForm={openQuoteForm} />
+        <main>
+          <Hero openQuoteForm={openQuoteForm} />
+          <About />
+          <Services />
+          <Process />
+         
+          <OurStory />
+          <Testimonials />
+          <Contact openQuoteForm={openQuoteForm} />
+        </main>
+        <Footer />
+        <WhatsAppButton phoneNumber="919918096894" />
+        <QuoteForm show={showQuoteForm} onClose={closeQuoteForm} />
+      </div>
+    </ThemeProvider>
   );
 };
 
