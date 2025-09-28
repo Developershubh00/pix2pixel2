@@ -155,7 +155,7 @@ const Hero: React.FC<HeroProps> = ({ openQuoteForm }) => {
                 />
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                   <motion.img 
-                    src="https://images.pexels.com/photos/8102680/pexels-photo-8102680.jpeg" 
+                    src="https://cdn.dribbble.com/userupload/45096204/file/815e9a583389d34eb9eba0508ff005b2.png" 
                     alt="Digital Marketing" 
                     className="rounded-lg shadow-2xl relative z-10 w-full h-full object-cover"
                     whileHover={{ scale: 1.02 }}
