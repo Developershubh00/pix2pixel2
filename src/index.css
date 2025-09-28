@@ -5,12 +5,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #03e9f4;
-  --primary-dark: #0392b4;
-  --secondary: #7928ca;
-  --accent: #ff0080;
-  --background: #080e1c;
-  --text: #ffffff;
+  --primary: #00BCD4;
+  --primary-dark: #0097A7;
+  --secondary: #00E5FF;
+  --accent: #1A237E;
+  --background: #F5F5F5;
+  --card-background: #FFFFFF;
+  --text: #424242;
+  --text-light: #757575;
+  --text-dark: #1A237E;
+  --gradient-start: #673AB7;
+  --gradient-end: #2196F3;
 }
 
 html {
@@ -32,42 +37,42 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary) 0%, #60efff 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   transform-origin: 0%;
   z-index: 9999;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, var(--primary) 0%, #60efff 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-btn {
-  background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   border-radius: 9999px;
   transition: all 0.3s ease;
 }
 
 .gradient-btn:hover {
-  background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
-  box-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+  background: linear-gradient(90deg, var(--gradient-end) 0%, var(--gradient-start) 100%);
+  box-shadow: 0 0 15px rgba(103, 58, 183, 0.5);
 }
 
 .blue-gradient-btn {
-  background: linear-gradient(90deg, #2563eb 0%, #60efff 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   border-radius: 9999px;
   transition: all 0.3s ease;
 }
 
 .blue-gradient-btn:hover {
-  background: linear-gradient(90deg, #60efff 0%, #2563eb 100%);
-  box-shadow: 0 0 15px rgba(3, 233, 244, 0.5);
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
 }
 
 .dot-grid {
-  background-image: radial-gradient(circle, rgba(3, 233, 244, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(0, 188, 212, 0.1) 1px, transparent 1px);
   background-size: 25px 25px;
 }
 
@@ -105,11 +110,11 @@ body {
   right: 0;
   top: 0;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .wave {
-  background: linear-gradient(90deg, var(--primary) 0%, #60efff 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   width: 200%;
   height: 300px;
   animation: wave 15s linear infinite;
@@ -118,8 +123,8 @@ body {
 
 .slow-wave {
   animation: wave 25s linear infinite;
-  opacity: 0.3;
-  background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+  opacity: 0.1;
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 }
 
 @keyframes wave {
@@ -143,7 +148,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -158,7 +163,7 @@ body {
 
 .whatsapp-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .form-popup {
@@ -167,7 +172,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,12 +189,12 @@ body {
 }
 
 .form-container {
-  background-color: #111827;
+  background-color: var(--card-background);
   border-radius: 10px;
   padding: 20px;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   position: relative;
   transform: translateY(20px);
   transition: transform 0.3s ease;
@@ -213,7 +218,7 @@ body {
   right: 15px;
   background: none;
   border: none;
-  color: white;
+  color: var(--text);
   font-size: 24px;
   cursor: pointer;
 }
@@ -223,10 +228,11 @@ body {
   padding: 12px;
   margin-bottom: 15px;
   border-radius: 5px;
-  background-color: #1f2937;
-  border: 1px solid #374151;
-  color: white;
+  background-color: var(--card-background);
+  border: 2px solid #E0E0E0;
+  color: var(--text);
   font-size: 14px;
+  transition: border-color 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -241,14 +247,14 @@ body {
 }
 
 .service-card {
-  background: rgba(17, 24, 39, 0.8);
+  background: var(--card-background);
   border-radius: 10px;
   padding: 0;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(3, 233, 244, 0.2);
+  border: 1px solid #E0E0E0;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -258,9 +264,9 @@ body {
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(3, 233, 244, 0.2);
-  border-color: rgba(3, 233, 244, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.2);
+  border-color: var(--primary);
 }
 
 .service-card::before {
@@ -270,7 +276,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(3, 233, 244, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.1), transparent);
   transition: left 0.5s;
 }
 
@@ -280,7 +286,7 @@ body {
 
 .star {
   position: absolute;
-  background-color: white;
+  background-color: var(--primary);
   width: 2px;
   height: 2px;
   border-radius: 50%;
@@ -449,7 +455,7 @@ body {
     top: 0;
     bottom: -2rem;
     width: 2px;
-    background: linear-gradient(to bottom, #03e9f4, #7928ca);
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
   }
 
   .process-step-mobile:last-child::before {
@@ -462,7 +468,7 @@ body {
     top: 0.5rem;
     width: 2rem;
     height: 2rem;
-    background: linear-gradient(45deg, #03e9f4, #7928ca);
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -497,7 +503,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(8, 14, 28, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
@@ -515,7 +521,7 @@ body {
 
   .nav-link-mobile {
     font-size: 1.25rem;
-    color: white;
+    color: var(--text);
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -523,8 +529,8 @@ body {
   }
 
   .nav-link-mobile:hover {
-    background: rgba(3, 233, 244, 0.1);
-    color: #03e9f4;
+    background: rgba(0, 188, 212, 0.1);
+    color: var(--primary);
   }
 
   /* Mobile contact form */
@@ -541,15 +547,16 @@ body {
     align-items: flex-start;
     margin-bottom: 1.5rem;
     padding: 1rem;
-    background: rgba(17, 24, 39, 0.6);
+    background: var(--card-background);
     border-radius: 0.5rem;
-    border: 1px solid rgba(3, 233, 244, 0.2);
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .contact-icon-mobile {
     margin-right: 1rem;
     margin-top: 0.25rem;
-    color: #03e9f4;
+    color: var(--primary);
   }
 
   /* Mobile footer */
@@ -687,4 +694,20 @@ body {
   .container {
     max-width: 1200px;
   }
+}
+
+/* Loading animation */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.success-message {
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+.error-message {
+  color: #F44336;
+  font-weight: 500;
 }

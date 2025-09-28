@@ -21,9 +21,13 @@ const StarField: React.FC = () => {
       star.style.top = `${Math.random() * containerHeight}px`;
       
       // Random size
-      const size = Math.random() * 2 + 1;
+      const size = Math.random() * 1.5 + 0.5;
       star.style.width = `${size}px`;
       star.style.height = `${size}px`;
+      
+      // Set color to match new theme
+      star.style.backgroundColor = '#00BCD4';
+      star.style.opacity = '0.3';
       
       // Random delay
       star.style.animationDelay = `${Math.random() * 5}s`;

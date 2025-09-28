@@ -14,7 +14,7 @@ const OurStory: React.FC = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 relative bg-[#080e1c]">
+    <section className="py-12 md:py-16 relative bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -24,7 +24,7 @@ const OurStory: React.FC = () => {
           className="text-center mb-8 md:mb-12"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-            <span className="gradient-text">Our Story</span>
+            <span className="text-[#1A237E] font-bold">Our Story</span>
           </h2>
         </motion.div>
 
@@ -36,25 +36,16 @@ const OurStory: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="relative"
           >
-            <div className="relative h-[400px] md:h-[500px]  rounded-lg overflow-hidden border border-[#03e9f4]/30">
-              {/* Placeholder for your image */}
-              {/* Background Image with 50% opacity */}
-  <img
-    src={storyImage}
-    alt="Story Background"
-    className="
-      absolute inset-0
-      w-[400px] h-[500px]         // mobile view
-      md:w-[600px] md:h-[600px]   // desktop view
-      object-cover mx-auto opacity-100
-    "
-  />
-
- 
+            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+              <img
+                src={storyImage}
+                alt="Story Background"
+                className="absolute inset-0 w-[400px] h-[500px] md:w-[600px] md:h-[600px] object-cover mx-auto opacity-100"
+              />
               
               {/* Floating elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-20 h-20 bg-[#03e9f4]/20 rounded-full blur-xl"
+                className="absolute -top-4 -right-4 w-20 h-20 bg-[#00BCD4]/20 rounded-full blur-xl"
                 animate={{
                   y: [-10, 10, -10],
                   scale: [1, 1.1, 1],
@@ -66,7 +57,7 @@ const OurStory: React.FC = () => {
                 }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#7928ca]/20 rounded-full blur-xl"
+                className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#673AB7]/20 rounded-full blur-xl"
                 animate={{
                   y: [10, -10, 10],
                   scale: [1.1, 1, 1.1],
@@ -89,7 +80,7 @@ const OurStory: React.FC = () => {
             className="space-y-6"
           >
             <motion.h3 
-              className="text-2xl md:text-2xl lg:text-3xl font-bold text-white"
+              className="text-2xl md:text-2xl lg:text-3xl font-bold text-[#1A237E]"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -98,7 +89,7 @@ const OurStory: React.FC = () => {
             </motion.h3>
             
             <motion.div 
-              className="space-y-4 text-gray-300"
+              className="space-y-4 text-gray-600"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -112,7 +103,7 @@ const OurStory: React.FC = () => {
               <p className="text-sm md:text-base leading-relaxed">
                 Pix2Pixel became our way of saying to every brand out there:
               </p>
-              <p className="text-[#03e9f4] font-semibold text-base md:text-lg">
+              <p className="text-[#00BCD4] font-semibold text-base md:text-lg">
                 "You're not alone. Let's build your dream, pixel by pixel."
               </p>
             </motion.div>

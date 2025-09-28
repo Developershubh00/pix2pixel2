@@ -40,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-[#080e1c]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90'
       }`}
     >
       <div className="container mx-auto px-4 py-3 md:py-4 nav-mobile">
@@ -63,12 +63,12 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <a href="#home" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Home</a>
-            <a href="#about" className="text-sm text-white hover:text-[#03e9f4] transition-colors">About</a>
-            <a href="#services" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Services</a>
-            <a href="#process" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Portfolio</a>
-            <a href="#team" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Blog</a>
-            <a href="#contact" className="text-sm text-white hover:text-[#03e9f4] transition-colors">Contact</a>
+            <a href="#home" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Home</a>
+            <a href="#about" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">About</a>
+            <a href="#services" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Services</a>
+            <a href="#process" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Portfolio</a>
+            <a href="#team" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Blog</a>
+            <a href="#contact" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Contact</a>
             <button 
               onClick={openQuoteForm}
               className="blue-gradient-btn text-white px-4 py-2 text-sm font-medium"
@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden text-white z-50 p-2 touch-target"
+            className="lg:hidden text-gray-700 z-50 p-2 touch-target"
             onClick={toggleMenu}
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -89,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
 
       {/* Mobile Navigation */}
       <div 
-        className={`lg:hidden fixed inset-0 bg-[#080e1c]/98 backdrop-blur-lg z-40 transform transition-transform duration-300 ease-in-out nav-menu-mobile ${
+        className={`lg:hidden fixed inset-0 bg-white/98 backdrop-blur-lg z-40 transform transition-transform duration-300 ease-in-out nav-menu-mobile ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } ${isOpen ? 'open' : ''}`}
       >

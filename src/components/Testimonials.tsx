@@ -98,11 +98,11 @@ const TestimonialCarousel: React.FC<{ inView: boolean }> = ({ inView }) => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-[#111827]/80 backdrop-blur-md p-8 rounded-xl border border-[#03e9f4]/30 relative group hover:border-[#03e9f4]/50 transition-all duration-300"
+                className="bg-white p-8 rounded-xl border border-gray-200 relative group hover:border-[#00BCD4] transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
               >
                 {/* Quote icon */}
-                <div className="absolute top-6 right-6 text-[#03e9f4]/20 group-hover:text-[#03e9f4]/40 transition-colors">
+                <div className="absolute top-6 right-6 text-[#00BCD4]/20 group-hover:text-[#00BCD4]/40 transition-colors">
                   <Quote size={32} />
                 </div>
                 
@@ -125,7 +125,7 @@ const TestimonialCarousel: React.FC<{ inView: boolean }> = ({ inView }) => {
                 
                 {/* Testimonial text */}
                 <motion.p 
-                  className="text-gray-300 text-lg leading-relaxed mb-8 text-center italic"
+                  className="text-gray-600 text-lg leading-relaxed mb-8 text-center italic"
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -143,14 +143,14 @@ const TestimonialCarousel: React.FC<{ inView: boolean }> = ({ inView }) => {
                   <motion.img 
                     src={testimonial.image} 
                     alt={testimonial.name} 
-                    className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-[#03e9f4]/30"
+                    className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-[#00BCD4]/30"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   />
                   <div className="text-center">
-                    <h4 className="text-white font-semibold text-lg">{testimonial.name}</h4>
+                    <h4 className="text-[#1A237E] font-semibold text-lg">{testimonial.name}</h4>
                     <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                    <p className="text-[#03e9f4] text-sm font-medium">{testimonial.company}</p>
+                    <p className="text-[#00BCD4] text-sm font-medium">{testimonial.company}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -162,7 +162,7 @@ const TestimonialCarousel: React.FC<{ inView: boolean }> = ({ inView }) => {
       {/* Navigation arrows */}
       <button
         onClick={prevTestimonial}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-[#03e9f4]/20 hover:bg-[#03e9f4]/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-[#03e9f4]/30"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-[#00BCD4]/20 hover:bg-[#00BCD4]/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-[#00BCD4]/30"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
@@ -171,7 +171,7 @@ const TestimonialCarousel: React.FC<{ inView: boolean }> = ({ inView }) => {
       
       <button
         onClick={nextTestimonial}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-[#03e9f4]/20 hover:bg-[#03e9f4]/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-[#03e9f4]/30"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-[#00BCD4]/20 hover:bg-[#00BCD4]/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-[#00BCD4]/30"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
@@ -186,8 +186,8 @@ const TestimonialCarousel: React.FC<{ inView: boolean }> = ({ inView }) => {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex 
-                ? 'bg-[#03e9f4] scale-125' 
-                : 'bg-[#03e9f4]/30 hover:bg-[#03e9f4]/60'
+                ? 'bg-[#00BCD4] scale-125' 
+                : 'bg-[#00BCD4]/30 hover:bg-[#00BCD4]/60'
             }`}
           />
         ))}
@@ -207,12 +207,12 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-12 md:py-16 relative dot-grid">
+    <section id="testimonials" className="py-12 md:py-16 relative bg-gray-50 dot-grid">
       <div className="container mx-auto px-4">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-1/3 left-1/4 w-72 h-72 bg-[#03e9f4]/5 rounded-full blur-3xl"
+            className="absolute top-1/3 left-1/4 w-72 h-72 bg-[#00BCD4]/5 rounded-full blur-3xl"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.6, 0.3],
@@ -224,7 +224,7 @@ const Testimonials: React.FC = () => {
             }}
           />
           <motion.div
-            className="absolute bottom-1/3 right-1/4 w-56 h-56 bg-[#7928ca]/5 rounded-full blur-3xl"
+            className="absolute bottom-1/3 right-1/4 w-56 h-56 bg-[#673AB7]/5 rounded-full blur-3xl"
             animate={{
               scale: [1.2, 1, 1.2],
               opacity: [0.6, 0.3, 0.6],
@@ -251,14 +251,14 @@ const Testimonials: React.FC = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="inline-block mb-6"
           >
-            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#03e9f4] to-[#7928ca] rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#00BCD4] to-[#673AB7] rounded-full flex items-center justify-center">
               <Quote className="w-8 h-8 text-white" />
             </div>
           </motion.div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-            <span className="gradient-text">What Our Clients Say</span>
+            <span className="text-[#1A237E] font-bold">What Our Clients Say</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say about our services.
           </p>
         </motion.div>

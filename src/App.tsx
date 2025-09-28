@@ -37,7 +37,7 @@ const App: React.FC = () => {
         <Process />
        
         <OurStory />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Contact openQuoteForm={openQuoteForm} />
       </main>
       <Footer />

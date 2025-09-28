@@ -14,11 +14,11 @@ const Hero: React.FC<HeroProps> = ({ openQuoteForm }) => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen pt-20 pb-12 flex items-center overflow-hidden bg-[#080e1c] hero-mobile">
+    <section id="home" className="relative min-h-screen pt-20 pb-12 flex items-center overflow-hidden bg-white hero-mobile">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[#03e9f4]/10 blur-[100px]"
+          className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[#00BCD4]/10 blur-[100px]"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ openQuoteForm }) => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-[#7928ca]/10 blur-[100px]"
+          className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-[#673AB7]/10 blur-[100px]"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.6, 0.3, 0.6],
@@ -44,8 +44,8 @@ const Hero: React.FC<HeroProps> = ({ openQuoteForm }) => {
         />
       </div>
       <div ref={waveRef} className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[#03e9f4]/20 blur-[100px]"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-[#7928ca]/20 blur-[100px]"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[#00BCD4]/20 blur-[100px]"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-[#673AB7]/20 blur-[100px]"></div>
       </div>
       
       <div className="container mx-auto px-4 z-10 relative">
@@ -80,7 +80,7 @@ const Hero: React.FC<HeroProps> = ({ openQuoteForm }) => {
                 </motion.span>
               </motion.h1>
               <motion.p 
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed hero-subtitle-mobile"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed hero-subtitle-mobile"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
@@ -106,7 +106,7 @@ const Hero: React.FC<HeroProps> = ({ openQuoteForm }) => {
                 </motion.button>
                 <motion.button
                   onClick={handleWhatsAppClick}
-                  className="border border-[#03e9f4] text-[#03e9f4] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium rounded-full text-center hover:bg-[#03e9f4]/10 transition-colors flex items-center justify-center hero-button-mobile touch-target"
+                  className="border-2 border-[#00BCD4] text-[#00BCD4] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium rounded-full text-center hover:bg-[#00BCD4]/10 transition-colors flex items-center justify-center hero-button-mobile touch-target"
                   whileHover={{ scale: 1.05, borderColor: "#60efff" }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, x: 20 }}
