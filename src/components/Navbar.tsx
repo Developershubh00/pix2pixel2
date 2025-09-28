@@ -93,6 +93,12 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } ${isOpen ? 'open' : ''}`}
       >
+        <button
+          className="absolute top-5 right-5 p-2 text-gray-700 z-[60]"
+         onClick={closeMenu}
+           >
+         <X size={24} />
+        </button>
         <div className="flex flex-col h-full justify-center items-center space-y-8 p-4 pt-20">
           <a href="#home" className="nav-link-mobile" onClick={closeMenu}>Home</a>
           <a href="#about" className="nav-link-mobile" onClick={closeMenu}>About</a>
