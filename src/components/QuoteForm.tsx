@@ -29,7 +29,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ show, onClose }) => {
 
   // Initialize EmailJS (you'll need to replace these with your actual values)
   useEffect(() => {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    emailjs.init("15Bx6Najwr5q8k86R"); // Replace with your EmailJS public key
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -51,13 +51,13 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ show, onClose }) => {
         company: formData.company,
         service: formData.service,
         message: formData.message,
-        to_email: 'admin@pix2pixel.com'
+        to_email: 'enquiry.pix2pixel@gmail.com'
       };
 
       // Send email using EmailJS
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_pix2pixel', // Replace with your EmailJS service ID
+        'template_886l31b', // Replace with your EmailJS template ID
         templateParams
       );
 
