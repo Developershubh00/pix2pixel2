@@ -38,62 +38,62 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90'
-      }`}
-    >
-      <div className="container mx-auto px-4 py-3 md:py-4 nav-mobile">
-        <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center z-50 space-x-2 md:space-x-3">
-            {/* Logo placeholder - you can replace this with your actual logo */}
-            <div className="w-8 h-8 md:w-10 md:h-10 p-1 bg-white rounded-lg flex items-center justify-center">
-              
-            <img
-            src={logo}
-            alt="logo"
-           className=" object-cover"
+    <>
+      {/* Main Navbar Header */}
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90'
+        }`}
+      >
+        <div className="container mx-auto px-4 py-3 md:py-4 nav-mobile">
+          <div className="flex items-center justify-between">
+            <a href="#" className="flex items-center z-50 space-x-2 md:space-x-3">
+              <div className="w-8 h-8 md:w-10 md:h-10 p-1 bg-white rounded-lg flex items-center justify-center">
+                <img
+                  src={logo}
+                  alt="logo"
+                  className="object-cover"
                 />
               </div> 
-          
-            <span className="text-white text-xl md:text-2xl font-bold nav-logo-mobile">
-              <span className="gradient-text">PIX2PIXEL</span>
-            </span>
-          </a>
+              <span className="text-white text-xl md:text-2xl font-bold nav-logo-mobile">
+                <span className="gradient-text">PIX2PIXEL</span>
+              </span>
+            </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
-            <a href="#home" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Home</a>
-            <a href="#about" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">About</a>
-            <a href="#services" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Services</a>
-            <a href="#process" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Portfolio</a>
-            <a href="#team" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Blog</a>
-            <a href="#contact" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Contact</a>
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-6">
+              <a href="#home" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Home</a>
+              <a href="#about" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">About</a>
+              <a href="#services" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Services</a>
+              <a href="#process" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Portfolio</a>
+              <a href="#team" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Blog</a>
+              <a href="#contact" className="text-sm text-gray-700 hover:text-[#00BCD4] transition-colors font-medium">Contact</a>
+              <button 
+                onClick={openQuoteForm}
+                className="blue-gradient-btn text-white px-4 py-2 text-sm font-medium"
+              >
+                Get a Quote
+              </button>
+            </nav>
+
+            {/* Mobile Menu Button */}
             <button 
-              onClick={openQuoteForm}
-              className="blue-gradient-btn text-white px-4 py-2 text-sm font-medium"
+              className="lg:hidden text-gray-700 z-[60] p-2 touch-target relative"
+              onClick={toggleMenu}
             >
-              Get a Quote
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden text-gray-700 z-50 p-2 touch-target"
-            onClick={toggleMenu}
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Overlay - Separate from header */}
       <div 
-        className={`lg:hidden fixed inset-0 bg-white/98 backdrop-blur-lg z-40 transform transition-transform duration-300 ease-in-out nav-menu-mobile ${
+        className={`lg:hidden fixed inset-0 bg-white/98 backdrop-blur-lg z-[55] transform transition-transform duration-300 ease-in-out nav-menu-mobile ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } ${isOpen ? 'open' : ''}`}
       >
-        <div className="flex flex-col h-full justify-center items-center space-y-8 p-4">
+        <div className="flex flex-col h-full justify-center items-center space-y-8 p-4 pt-20">
           <a href="#home" className="nav-link-mobile" onClick={closeMenu}>Home</a>
           <a href="#about" className="nav-link-mobile" onClick={closeMenu}>About</a>
           <a href="#services" className="nav-link-mobile" onClick={closeMenu}>Services</a>
@@ -111,7 +111,15 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
           </button>
         </div>
       </div>
-    </header>
+
+      {/* Optional: Background overlay for better UX */}
+      {isOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/20 z-[45]"
+          onClick={closeMenu}
+        />
+      )}
+    </>
   );
 };
 
